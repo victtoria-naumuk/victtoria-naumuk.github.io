@@ -1,0 +1,61 @@
+.col4 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.col4 .box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-bottom:10vh;
+    padding-right: 15vw;
+    align-content: center;
+    margin: auto;
+
+    flex-wrap: wrap;
+    /*align-items: center;*/
+    align-content: center;
+    overflow: hidden;
+    max-height:100vh;
+}
+
+.head-box {
+	width: 100%;
+    max-width: 600px;
+}
+
+/*.bubble-box {
+	width: 20%; 
+	max-width: 300px;
+}*/
+
+.bubble-box img, 
+.head-box img {
+	display: block;
+	width: 100%;
+}
+
+.item p {
+/*	background-image: url("../img/bubble-22.svg");*/
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: left;
+	line-height: 150%;
+	max-width: 600px;
+
+}
+
+.col4 p {
+    color:#000000;
+    max-width: 600px;
+    line-height: 160%;
+    font-weight: 300;
+    font-size: 1.5rem;
+
+}
+
+.bgcol:not(.col4) {
+    z-index: 9994;
+}

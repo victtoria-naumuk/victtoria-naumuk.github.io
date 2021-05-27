@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ukrFUNK</title>
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/video_bg.css">
+    <link rel="stylesheet" href="css/slidePage.css">
+    <link rel="stylesheet" type="text/css" href="css/page-animation.css">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+
+
+</head>
+
+<body id="top" class="startpage">
+
+
+    <header>
+        <div class="video-wrapper">
+            <video src="video/ukrFUNK.mp4" autoplay="true" loop="true" muted="true">
+            </video>
+        </div>
+        <a class="mouse-scroll" href="#"> 
+            <span class="mouse">
+                <span class="mouse-movement"> 
+            </span>
+            </span>
+           <!--  <span class="mouse-message fadeIn">scroll</span> --> 
+        </a>
+        <div class="header-overlay"></div>
+        <div class="header-content slidePage-container" id="slidePage-container">
+            <div class="item item1">
+                <div class="img-box step zoomIn">
+                    <img src="img/title_01-22.png" alt="">
+                </div>
+            </div>
+            <div class="item item2">
+                <div class="img-box step zoomIn">
+                    <img src="img/title_02-22.png" alt="">
+                </div>
+            </div>
+            <div class="item item3">
+                <div class="bgcol col1 step slideDownOut"></div>
+                <div class="bgcol col2 step slideDownOut" data-delay="800"></div>
+                <div class="bgcol col3 step slideDownOut" data-delay="1600"></div>
+                <div class="bgcol col4 step slideDown" data-delay="2400">
+                    <div class="box">
+                        <div class="head-box step zoomIn">
+                            <img src="img/title_03-22-22.png" alt="">
+                        </div>
+                        <p class="step zoomIn" data-delay="2800">
+                            Це доволі загальна назва, як, до прикладу, і&nbsp;брит-поп (британська адаптація американського прото-рок-н-ролу). Рок-н-рол, біт-музику та&nbsp;джаз тодішня влада забороняла, але в&nbsp;артистів виходив симбіоз західної та української традиційної музики&nbsp;— це було дозволено.
+                        </p> 
+                       <!--  <div class="bubble-box step zoomIn">
+                            <img src="img/bubble-22.svg" alt="">
+                        </div> -->
+                    </div>
+                </div>
+                <nav>
+                    <div class="navbar container">
+                        <div class="logo">
+                            <a class="js-scroll" href="index.html#top">
+                                <img src="img/logo-22.png" alt="Приклад логотипу">
+                            </a>
+                        </div>
+                        <div class="navigation">
+                            <ul>
+                                <li><a class="nav-link js-scroll" href="archive.html">архів</a></li>
+                                <li><a class="nav-link js-scroll" href="via.html">віа</a></li>
+                                <li><a class="nav-link js-scroll" href="history.html#history">історія</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+    <script type="text/javascript" src="js/nav.js"></script>
+    <script type="text/javascript" src="js/slidePage.min.js"></script>
+    <script type="text/javascript">
+      $('#pagination').find('a').eq(0).addClass('active')
+      slidePage.init({
+        /*'index': 1,*/
+        before:function(index,direction,target){
+          if(direction=='next'){
+            if(target==1){
+                slidePage.fire(2)
+            }
+            if(target==3){
+                if(!$('nav').hasClass('active')) {
+                    $('nav').addClass('active');
+                }
+            }
+
+            $('#pagination').find('a').removeClass('active').eq(index).addClass('active')
+        }else if(direction=='prev'){
+          $('#pagination').find('a').removeClass('active').eq(target-1).addClass('active');
+          $('nav').removeClass('active');
+      }
+  },
+  after:function(index,direction,target){
+  },
+  'useAnimation': true,
+  'refresh': true,
+  'speed': false,
+});
+</script>
+
+
+</body>
+
+</html>
